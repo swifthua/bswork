@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.zh.po.Examine" table="EXAMINE" >
+        <id name="shid" type="java.lang.Integer">
+            <column name="SHID" />
+            <generator class="identity" />
+        </id>
+        
+        <property name="type" type="java.lang.String">
+            <column name="TYPE" length="16" />
+        </property>
+        <property name="shdm" type="java.lang.String">
+            <column name="SHDM" length="16" />
+        </property>
+        <many-to-one name="shr1" class="com.zh.po.User" column="SHR1"></many-to-one>
+        <property name="shyj1" type="java.lang.String">
+            <column name="SHYJ1" length="16" />
+        </property>
+        <property name="shsj1" type="java.util.Date">
+            <column name="SHSJ1"  />
+        </property>
+        <many-to-one name="shr2" class="com.zh.po.User" column="SHR2"></many-to-one>
+        <property name="shyj2" type="java.lang.String">
+            <column name="SHYJ2" length="16" />
+        </property>
+        <property name="shsj2" type="java.util.Date">
+            <column name="SHSJ2"  />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" length="64" />
+        </property>
+    </class>
+</hibernate-mapping>

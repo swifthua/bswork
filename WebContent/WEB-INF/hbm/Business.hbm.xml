@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.zh.po.Business" table="BUSINESS" >
+        <id name="ccid" type="java.lang.Integer">
+            <column name="CCID" length="11" />
+            <generator class="identity" /><!-- identity自增长策略-->
+        </id>
+        
+        <many-to-one name="xmdm" class="com.zh.po.Project" column="XMDM"></many-to-one>
+        <property name="ccly" type="java.lang.String">
+            <column name="CCLY" length="64" />
+        </property>
+        
+        <many-to-one name="ccr" class="com.zh.po.User" column="CCR"></many-to-one>
+		<many-to-one name="bmdm" class="com.zh.po.Depart" column="BMDM"></many-to-one>
+        <property name="ccStart" type="java.util.Date">
+            <column name="CC_START"  />
+        </property>
+        <property name="ccStop" type="java.util.Date">
+            <column name="CC_STOP" />
+        </property>
+        
+        <property name="xcStart" type="java.util.Date">
+            <column name="XC_START"  />
+        </property>
+        <property name="xcStop" type="java.util.Date">
+            <column name="XC_STOP" />
+        </property>
+        
+        <many-to-one name="xcgj" class="com.zh.po.Traffic" column="XCGJ"></many-to-one>
+        <property name="xcfy" type="java.lang.String">
+            <column name="XCFY" length="16" />
+        </property>
+        <property name="zsfy" type="java.lang.String">
+            <column name="ZSFY" length="16" />
+        </property>
+        <property name="snjtfy" type="java.lang.String">
+            <column name="SNJTFY" length="16" />
+        </property>
+        <property name="zfy" type="java.lang.String">
+            <column name="ZFY" length="32" />
+        </property>
+        <property name="djrq" type="java.util.Date">
+            <column name="DJRQ"  />
+        </property>
+        <many-to-one name="wczt" class="com.zh.po.Status" column="WCZT"></many-to-one>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" length="256" />
+        </property>
+        <property name="sfjy" type="java.lang.Integer">
+            <column name="SFJY"  />
+        </property>
+    </class>
+</hibernate-mapping>

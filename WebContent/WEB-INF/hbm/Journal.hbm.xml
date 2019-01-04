@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.zh.po.Journal" table="JOURNAL" >
+        <id name="rzid" type="java.lang.Integer">
+            <column name="RZID"/>
+            <generator class="identity" />
+        </id>
+        <many-to-one name="djr" class="com.zh.po.User" column="DJR"></many-to-one>
+        <many-to-one name="bmdm" class="com.zh.po.Depart" column="BMDM"></many-to-one>
+        
+        <property name="rzsj" type="java.util.Date">
+            <column name="RZSJ" />
+        </property>
+        <property name="djsj" type="java.util.Date">
+            <column name="DJSJ" />
+        </property>
+        
+        <property name="duration" type="java.lang.String">
+            <column name="DURATION" length="16" />
+        </property>
+        
+        <property name="rznr" type="java.lang.String">
+            <column name="RZNR" length="256" />
+        </property>
+        <property name="sfjy" type="java.lang.Integer">
+            <column name="SFJY" />
+        </property>
+    </class>
+</hibernate-mapping>

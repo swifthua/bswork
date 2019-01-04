@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.zh.po.Position" table="POSITION" >
+        <id name="zwdm" type="java.lang.String">
+            <column name="ZWDM" length="16" />
+            <generator class="assigned" /><!-- assigned手动分配方式 -->
+        </id>
+        <property name="zwmc" type="java.lang.String">
+            <column name="ZWMC" length="32" />
+        </property>
+        <property name="sfjy" type="java.lang.Integer">
+            <column name="SFJY"  />
+        </property>
+    </class>
+</hibernate-mapping>

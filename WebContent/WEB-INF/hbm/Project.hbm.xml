@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.zh.po.Project" table="PROJECT" >
+        <id name="xmdm" type="java.lang.String">
+            <column name="XMDM" length="16" />
+            <generator class="assigned" />
+        </id>
+        <property name="xmmc" type="java.lang.String">
+            <column name="XMMC" length="64" />
+        </property>
+        <property name="bbh" type="java.lang.String">
+            <column name="BBH" length="16" />
+        </property>
+        <property name="lxrq" type="java.util.Date">
+            <column name="LXRQ"  />
+        </property>
+        
+        <!-- 出差人 多对一关系 -->
+        <many-to-one name="lxr" class="com.zh.po.User" column="LXR"></many-to-one>
+
+        <property name="xmxx" type="java.lang.String">
+            <column name="XMXX" length="256" />
+        </property>
+        
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" length="64"/>
+        </property>
+        <property name="fjmc" type="java.lang.String">
+            <column name="FJMC" length="64" />
+        </property>
+        <property name="fjgs" type="java.lang.String">
+            <column name="FJGS" length="16" />
+        </property>
+        <property name="fjdx" type="java.lang.Float">
+            <column name="FJDX"  />
+        </property>
+        <property name="ftpUrl" type="java.lang.String">
+            <column name="FTPURL" length="64" />
+        </property>
+        
+        <property name="lastUpdate" type="java.util.Date">
+            <column name="LASTUPDATE"  />
+        </property>
+        
+        <property name="sfjy" type="java.lang.Integer">
+            <column name="SFJY"  />
+        </property>
+    </class>
+</hibernate-mapping>

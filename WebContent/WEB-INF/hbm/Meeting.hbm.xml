@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.zh.po.Meeting" table="MEETING" >
+        <id name="hyid" type="java.lang.Integer">
+            <column name="HYID" length="11" />
+            <generator class="identity" /><!-- identity自增长策略-->
+        </id>
+        
+        <!-- 出差人 多对一关系 -->
+        <many-to-one name="hyfqr" class="com.zh.po.User" column="HYFQR"></many-to-one>
+
+        <property name="hysj" type="java.util.Date">
+            <column name="HYSJ"  />
+        </property>
+        <property name="djsj" type="java.util.Date">
+            <column name="DJSJ"  />
+        </property>
+        <property name="hydz" type="java.lang.String">
+            <column name="HYDZ" length="64" />
+        </property>
+        <property name="hybt" type="java.lang.String">
+            <column name="HYBT" length="64"/>
+        </property>
+        <property name="hynr" type="java.lang.String">
+            <column name="HYNR" length="256" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" length="64" />
+        </property>
+        <property name="sfjy" type="java.lang.Integer">
+            <column name="SFJY"  />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.zh.po.User" table="STAFF">
+        <id name="yhdm" type="java.lang.String">
+            <column name="YHDM" length="16" />
+            <generator class="assigned" /><!-- assigned手动分配方式 -->
+        </id>
+        <property name="yhzh" type="java.lang.String">
+            <column name="YHZH" length="16" />
+        </property>
+        <property name="yhkl" type="java.lang.String">
+            <column name="YHKL" length="16" />
+        </property>
+        <property name="yhxm" type="java.lang.String">
+            <column name="YHXM" length="32" />
+        </property>
+        <property name="csrq" type="java.util.Date">
+            <column name="CSRQ"  />
+        </property>
+        
+        <!-- 所属部门   多对一关系-->
+        <many-to-one name="bmdm" class="com.zh.po.Depart" column="BMDM"></many-to-one>
+        
+        <!-- 职位  多对一关系-->
+        <many-to-one name="zwdm" class="com.zh.po.Position" column="ZWDM"></many-to-one>
+
+        <property name="yhxb" type="java.lang.String">
+            <column name="YHXB" length="8" />
+        </property>
+        
+        <property name="address" type="java.lang.String">
+            <column name="ADDRESS" length="64" />
+        </property>
+        <property name="phone" type="java.lang.String">
+            <column name="PHONE" length="32" />
+        </property>
+        <property name="email" type="java.lang.String">
+            <column name="EMAIL" length="32" />
+        </property>
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" length="64" />
+        </property>
+        <property name="sfjy" type="java.lang.Integer">
+            <column name="SFJY" length="2" />
+        </property>
+    </class>
+</hibernate-mapping>

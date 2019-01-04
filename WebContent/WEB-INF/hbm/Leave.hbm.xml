@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="com.zh.po.Leave" table="LEAVE" >
+        <id name="qjid" type="java.lang.Integer">
+            <column name="QJID"/>
+            <generator class="identity" />
+        </id>
+        <many-to-one name="qjr" class="com.zh.po.User" column="QJR"></many-to-one>
+        <many-to-one name="bmdm" class="com.zh.po.Depart" column="BMDM"></many-to-one>
+        
+        <property name="qjStart" type="java.util.Date">
+            <column name="QJ_START" />
+        </property>
+        <property name="qjStop" type="java.util.Date">
+            <column name="QJ_STOP" />
+        </property>
+        <property name="djsj" type="java.util.Date">
+            <column name="DJSJ" />
+        </property>
+        
+        <many-to-one name="wczt" class="com.zh.po.Status" column="WCZT"></many-to-one>
+        
+        <property name="remark" type="java.lang.String">
+            <column name="REMARK" length="256" />
+        </property>
+        <property name="sfjy" type="java.lang.Integer">
+            <column name="SFJY" />
+        </property>
+    </class>
+</hibernate-mapping>
